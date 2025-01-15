@@ -8,11 +8,11 @@ I took some times to make this work.
 
 # Steps
 
-- Have Java installed
+- Have Java installed (I tried on versions: 17, 21, 23)
 - Install ["mfussenegger/nvim-jdtls"](https://github.com/mfussenegger/nvim-jdtls)
-- Install "jdtls" from Mason
-- Adjust the content of `lua/configs/jdtls.lua` [link](lua/configs/jdtls.lua) to your local configuration (see comments)
-- Check how "jdtls" is setup in `./lua/configs/lspconfig.lua` [link](lua/configs/lspconfig.lua)
+- Install ["jdtls"](https://github.com/eclipse-jdtls/eclipse.jdt.ls) **from Mason**
+- Adjust the content of `lua/configs/jdtls.lua` [(link)](lua/configs/jdtls.lua) to your local configuration (see comments)
+- Check how "jdtls" is setup in `./lua/configs/lspconfig.lua` [(link)](lua/configs/lspconfig.lua)
 - Enjoy
 
 # Problems? Suggestions?
