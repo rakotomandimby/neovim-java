@@ -8,17 +8,6 @@ local root_directory = "/home/mihamina/Projects/your-customer/project-n"
 -- This can be any directory, I just choosed this because I like it
 local workspace_directory = "/tmp/jdtls-workspace"
 
--- The very important feature for me:
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-  local opts = { noremap=true, silent=true }
-  buf_set_keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-  buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-end
-
 local jdtls_config = {
   cmd = {
     '/home/mihamina/Apps/jdk/bin/java',                           -- I dont have Java globally (my choice, you may have your setup)
@@ -38,7 +27,6 @@ local jdtls_config = {
   },
   root_dir = root_directory,
   capabilities = capabilities,
-  on_attach = on_attach,
   settings = {
     java = {
       signatureHelp = { enabled = true },
