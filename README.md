@@ -15,6 +15,13 @@ I took some times to make this work.
 - Check how "jdtls" is setup in `./lua/configs/lspconfig.lua` [(link)](lua/configs/lspconfig.lua)
 - Enjoy
 
+# Lombok
+
+[Lombok](https://projectlombok.org/) is used in this setup.
+Currently, I use v1.18.36 (November 15th, 2024).
+Check the las versions from the [changelog](https://projectlombok.org/changelog).
+
+
 # Problems? Suggestions?
 
 Just open an issue or file a pull request.
