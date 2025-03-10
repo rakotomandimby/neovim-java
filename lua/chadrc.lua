@@ -13,6 +13,29 @@ M.ui = {
   tabufline = {
     enabled= false
   },
+  statusline = {
+    default = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
+    theme = "vscode",
+    modules = {
+      file = function()
+        local icon = "󰈚"
+        local path = vim.api.nvim_buf_get_name(M.stbufnr())
+        local name = (path == "" and "Empty") or path:match "([^/\\]+)[/\\]*$"
+        name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(M.stbufnr()), ":.")
+
+        if name ~= "Empty" then
+          local devicons_present, devicons = pcall(require, "nvim-web-devicons")
+
+          if devicons_present then
+            local ft_icon = devicons.get_icon(name)
+            icon = (ft_icon ~= nil and ft_icon) or icon
+          end
+        end
+        return "    " .. icon .. " " .. name .. "    "
+      end
+
+    },
+  },
 }
 M.base46 = {
   theme = "flexoki-light",
